@@ -35,16 +35,6 @@ output reg             negativeedge    // 1 clk pulse at falling edge of conditi
                 conditioned <= synchronizer1;
 
                 positiveedge <= 1;
-                
-                // if (synchronizer1 == 1) begin
-                //     positiveedge <= 1;
-                //     negativeedge <= 0;
-                // end
-                
-                // else begin
-                //     positiveedge <= 0;
-                //     negativeedge <= 1;
-                // end
 
             end
 
