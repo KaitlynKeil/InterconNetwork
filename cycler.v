@@ -1,28 +1,8 @@
 `include "dff.v"
 
-module cycler_test();
-	reg clk;
-	wire s0,s1;
-
-	cycler dut(.clk(clk), .s0(s0), .s1(s1));
-
-	initial begin 
-    	clk=0;
-    end
-    always #10 clk=!clk;    // 50MHz Clock
-
-    initial begin
-	    $dumpfile("cycler.vcd");
-	    $dumpvars();
-    	#100
-    	$finish;
-    end
-endmodule
-
-
 module cycler (
-	input           clk,    // Clock
-	output[1:0] reg s       // Select bits
+	input            clk,    // Clock
+	output reg [1:0] s       // Select bits
 	
 );
 
