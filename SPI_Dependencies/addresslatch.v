@@ -7,7 +7,7 @@
 
 module addresslatch
 #(
-    parameter width  = 7
+    parameter width  = 8
 )
 (
     input [width-1:0] addressIn,
