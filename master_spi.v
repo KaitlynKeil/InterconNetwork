@@ -19,12 +19,12 @@ module master_spi
 	reg self_assert, left_assert, right_assert;
 
 	always @(posedge clk) begin
-		if (enable == 2'b00) begin
+		if (enable == 2'b01) begin
 			self_assert = 1'b1;
-		end else if (enable == 2'b01) begin
-			right_assert = 1'b1;
-		end else if (enable == 2'b10) begin
+		end else if (enable == 2'b00) begin
 			left_assert = 1'b1;
+		end else if (enable == 2'b10) begin
+			right_assert = 1'b1;
 		end
 	end
 
