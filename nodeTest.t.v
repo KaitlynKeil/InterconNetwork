@@ -20,7 +20,7 @@ module nodeTest();
 							.shiftOutRightCS(shiftOutRightCS),
 							.shiftOutCS(shiftOutCS),
 							.shiftOutData(shiftOutData),
-							.shiftOutLeftData(shiftOutData),
+							.shiftOutLeftData(shiftOutLeftData),
 							.shiftOutRightData(shiftOutRightData),
 							.shiftOutCLK(_));
 
