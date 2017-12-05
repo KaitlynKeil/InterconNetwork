@@ -12,7 +12,8 @@ module master_spi
 	input [1:0] enable,
 	input [width-1:0] in_instr,
 	output check_self, check_left, check_right,
-	output [width-1:0] out_instr
+	output [width-1:0] out_instr,
+	output clk_out
 );
 
 	reg self_assert, left_assert, right_assert;
