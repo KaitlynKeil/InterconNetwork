@@ -1,13 +1,17 @@
 `include "receiver_queue.v"
 
 module queue_test();
-	reg         clk;
-	reg  [31:0] right_sig, left_sig, self_sig;
-	wire [31:0] sig_to_process;
-	wire        sig_alert;
-	wire [1:0]  source;
+	reg         clk;                             // System clock
+	reg         check_r = 1'b0, check_l = 1'b0, check_s = 1'b0;       // Signals to tell queue that there is a new instruction
+	reg  [31:0] right_sig, left_sig, self_sig;   // Instructions to pass
+	wire [31:0] sig_to_process;                  // Output instruction of the queue
+	wire        sig_alert;                       // Alert to main system that there is a new instruction
+	wire [1:0]  source;                          // Where that new instruction is from
 
 	receiver_queue dut(.clk(clk),
+						.check_l(check_l),
+						.check_r(check_r),
+						.check_s(check_s),
 						.in_sig_right(right_sig),
 						.in_sig_left(left_sig),
 						.in_sig_self(self_sig),
@@ -38,11 +42,18 @@ module queue_test();
     initial begin
 	    $dumpfile("queue_test.vcd");
 	    $dumpvars(); #10
-    	right_sig <= 32'd42; #200
-    	left_sig <=  32'd73; self_sig <= 32'd89; #200
-    	right_sig <= 32'b1; #50
-    	right_sig <= 32'd2; #200
-    	right_sig <= 32'd500; left_sig <= 32'd800; self_sig <= 32'd4; #500
+    	right_sig <= 32'd42; check_r <= 1'b1; #20
+    	check_r <= 1'b0;  #200
+    	left_sig <=  32'd73; self_sig <= 32'd89;  check_l <= 1'b1; check_s <= 1'b1; #20
+    	check_l <= 1'b0; check_s <= 1'b0; #200
+    	right_sig <= 32'b1; check_r <= 1'b1; #20
+    	check_r <= 1'b0; #50
+    	right_sig <= 32'd2; check_r <= 1'b1; #20
+    	check_r <= 1'b0; #200
+    	check_l <= 1'b1; #20
+    	check_l <=1'b0; #50
+    	right_sig <= 32'd500; left_sig <= 32'd800; self_sig <= 32'd4; check_l <= 1'b1; check_r <= 1'b1; check_s <= 1'b1; #20
+    	check_l <= 1'b0; check_r <= 1'b0; check_s <= 1'b0; #500
 
     	$finish;
     end
