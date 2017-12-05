@@ -38,17 +38,17 @@ inputconditioner spi_self(.clk(clk),
 cycler selector(.clk(clk), .s(s));
 
 	always @(posedge clk) begin
-		if (s===2'b10 && new_r==1'b1) begin
+		if (s===2'b10 && new_r==1'b1 && processed_sig_right !== 32'bx) begin
 			selected_sig <= processed_sig_right;
 			new_r <= 1'b0;
 			sig_alert <= 1'b1;
 		end
-		else if (s===2'b01 && new_s==1'b1) begin
+		else if (s===2'b01 && new_s==1'b1 && processed_sig_left !== 32'bx) begin
 			selected_sig <= processed_sig_self;
 			new_s <= 1'b0;
 			sig_alert <= 1'b1;
 		end
-		else if (s===2'b00 && new_l==1'b1) begin
+		else if (s===2'b00 && new_l==1'b1 && processed_sig_self !== 32'bx) begin
 			selected_sig <= processed_sig_left;
 			new_l <= 1'b0;
 			sig_alert <= 1'b1;
