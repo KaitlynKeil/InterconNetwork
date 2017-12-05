@@ -1,4 +1,5 @@
 `include "receiver_queue.v"
+`include "inputconditioner.v"
 
 module queue_test();
 	reg         clk;                             // System clock
