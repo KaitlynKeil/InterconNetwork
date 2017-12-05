@@ -8,6 +8,10 @@ module nodeTest();
 	reg check_l,check_r,check_s;
 	wire [31:0] shiftOutLeftData,shiftOutRightData,shiftOutData;
 	wire shiftOutLeftCS,shiftOutRightCS,shiftOutCS;
+	wire [1:0] dataSource,outputSelect;
+	wire controllerEn;
+	wire [31:0] instruction;
+	wire [31:0] instructionTo;
 
 	oneDimensionalNode dut(.shiftInLeftData(left_sig),
 							.shiftInLeftCS(check_l),
@@ -22,7 +26,12 @@ module nodeTest();
 							.shiftOutData(shiftOutData),
 							.shiftOutLeftData(shiftOutLeftData),
 							.shiftOutRightData(shiftOutRightData),
-							.shiftOutCLK(_));
+							.shiftOutCLK(_),
+							.dataSource(dataSource),
+							.outputSelect(outputSelect),
+							.controllerEn(controllerEn),
+							.instruction(instruction),
+							.instructionTo(instructionTo));
 
  //    task checkTestCase;
 	//   	input sig_alert, exp_alert;

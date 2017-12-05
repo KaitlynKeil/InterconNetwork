@@ -1,22 +1,26 @@
-module node_controller(clk,source_port,controller_enable,instruction_in,instruction_out,enable);
+module node_controller(clk,source_port,controller_enable,instruction_in,instruction_out,enable,controller_enable_out);
 	input clk;
 	input [1:0] source_port;
 	input controller_enable;
 	input [31:0] instruction_in;
 	output [31:0] instruction_out;
 	output [1:0] enable;
+	output controller_enable_out;
 	
 	parameter NODE_IP = 3'b000;
 	parameter MIDPOINT_NODE = 3'b011;
 	parameter NODE_IP_BITWIDTH = 3;
 	
 	reg [1:0] enable;
+	reg controller_enable_out;
 	wire [2:0] destination_node,originating_node;
-	wire [31:0] instruction_out;
+	reg [31:0] instruction_out;
+	wire [31:0] instruction_in;
+	wire controller_enable;
+	
 	
 	assign destination_node = instruction_in[31:31-NODE_IP_BITWIDTH+1];
 	assign originating_node = instruction_in[31-NODE_IP_BITWIDTH:31-NODE_IP_BITWIDTH-NODE_IP_BITWIDTH+1];
-	assign instruction_out = instruction_in;
 	
 	always @ (posedge clk) begin
 		if(controller_enable) begin
@@ -42,5 +46,7 @@ module node_controller(clk,source_port,controller_enable,instruction_in,instruct
 				end
 			end
 		end
+		instruction_out = instruction_in;
+		controller_enable_out = controller_enable;
 	end
 endmodule

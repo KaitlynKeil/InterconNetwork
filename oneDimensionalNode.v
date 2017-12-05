@@ -2,12 +2,15 @@
 `include "receiver_queue.v"
 `include "node_controller.v"
 
-module oneDimensionalNode(shiftInLeftData,shiftInLeftCS,shiftInRightData,shiftInRightCS,shiftInData,shiftInCLK,shiftInCS,shiftOutLeftCS,shiftOutRightCS,shiftOutLeftData,shiftOutRightData,shiftOutData,shiftOutCLK,shiftOutCS);
+module oneDimensionalNode(shiftInLeftData,shiftInLeftCS,shiftInRightData,shiftInRightCS,shiftInData,shiftInCLK,shiftInCS,shiftOutLeftCS,shiftOutRightCS,shiftOutLeftData,shiftOutRightData,shiftOutData,shiftOutCLK,shiftOutCS,dataSource,outputSelect,controllerEn,instruction,instructionTo);
 
 	input [31:0] shiftInLeftData,shiftInRightData,shiftInData;
 	input shiftInLeftCS,shiftInRightCS,shiftInCS,shiftInCLK;
 	output [31:0] shiftOutLeftData,shiftOutRightData,shiftOutData;
 	output shiftOutLeftCS,shiftOutRightCS,shiftOutCS,shiftOutCLK;
+	output [1:0] dataSource,outputSelect;
+	output controllerEn;
+	output [31:0] instruction,instructionTo;
 	
 	wire [31:0] fromRightData,fromLeftData,fromData,instruction,instructionTo;
 	wire fromRightCS,fromLeftCS,fromCS,controllerEn;
