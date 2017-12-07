@@ -20,7 +20,7 @@ module oneDimensionalNode(shiftInLeftData,shiftInLeftCS,shiftInRightData,shiftIn
 	
 	node_controller nodeController(.clk (shiftInCLK),.source_port (dataSource),.controller_enable (controllerEn),.instruction_in (instruction),.instruction_out (instructionTo),.enable (outputSelect));
 
-	master_spi masterSPI(.clk (shiftInCLK),.enable (outputSelect),.in_instr(instructionTo),.check_self(shiftOutCS),.check_left(shiftOutleftCS),.check_right(shiftOutRightCS),.out_instr(shiftOutData),.clk_out(shiftOutCLK));
+	master_spi masterSPI(.clk (shiftInCLK),.enable (outputSelect),.in_instr(instructionTo),.check_self(shiftOutCS),.check_left(shiftOutleftCS),.check_right(shiftOutRightCS),.self_instr(shiftOutData), .left_instr(shiftOutLeftData), .right_instr(shiftOutRightData), .clk_out(shiftOutCLK));
 	
 endmodule
 	
