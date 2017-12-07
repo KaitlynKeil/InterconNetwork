@@ -1,4 +1,4 @@
-module node_controller(clk,source_port,controller_enable,instruction_in,instruction_out,enable,controller_enable_out);
+module node_controller (clk,source_port,controller_enable,instruction_in,instruction_out,enable,controller_enable_out);
 	input clk;
 	input [1:0] source_port;
 	input controller_enable;

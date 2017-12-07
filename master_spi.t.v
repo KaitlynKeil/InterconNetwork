@@ -42,11 +42,11 @@ module master_spi_test();
 		$dumpfile("master_spi.vcd");
 		$dumpvars();
 
-		enable <=  2'b0; in_instr <= 32'd30000; #100
+		// enable <=  2'b0; in_instr <= 32'd30000; #100
 
-		enable <= 2'b1; in_instr <= 32'd50000; #100
+		// enable <= 2'b1; in_instr <= 32'd50000; #100
 
-		enable <= 2'b10; in_instr <= 32'd10000; #100
+		enable <= 2'b10; in_instr <= 32'd10000; #1000
 
 		$finish();
 	end

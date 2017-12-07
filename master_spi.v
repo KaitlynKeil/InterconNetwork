@@ -2,6 +2,7 @@
 `include "SPI_Dependencies/datamemory.v"
 `include "SPI_Dependencies/addresslatch.v"
 
+// change so it is only a pulse that lasts for one
 
 module master_spi
 #(
@@ -12,7 +13,7 @@ module master_spi
 	input [1:0] enable,
 	input [width-1:0] in_instr,
 	output check_self, check_left, check_right,
-	output [width-1:0] out_instr,
+	output [width-1:0] self_instr, left_instr, right_instr,
 	output clk_out
 );
 
@@ -34,9 +35,9 @@ module master_spi
 		end
 	end
 
-	self in (clk, self_assert, in_instr, check_self, out_instr);
-	sender left (clk, left_assert, in_instr, check_right, out_instr);
-	sender right (clk, right_assert, in_instr, check_left, out_instr);
+	self in (clk, self_assert, in_instr, check_self, self_instr);
+	sender left (clk, left_assert, in_instr, check_right, right_instr);
+	sender right (clk, right_assert, in_instr, check_left, left_instr);
 
 endmodule
 
