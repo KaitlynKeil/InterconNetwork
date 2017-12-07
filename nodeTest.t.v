@@ -12,6 +12,7 @@ module nodeTest();
 	wire controllerEn;
 	wire [31:0] instruction;
 	wire [31:0] instructionTo;
+	wire controller_enable_out;
 
 	oneDimensionalNode dut(.shiftInLeftData(left_sig),
 							.shiftInLeftCS(check_l),
@@ -31,7 +32,8 @@ module nodeTest();
 							.outputSelect(outputSelect),
 							.controllerEn(controllerEn),
 							.instruction(instruction),
-							.instructionTo(instructionTo));
+							.instructionTo(instructionTo),
+							.controller_enable_out(controller_enable_out));
 
  //    task checkTestCase;
 	//   	input sig_alert, exp_alert;
