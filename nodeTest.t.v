@@ -55,22 +55,21 @@ module nodeTest();
     end
     always #10 clk=!clk;    // 50MHz Clock
 
+
     initial begin
 	    $dumpfile("node_test.vcd");
 	    $dumpvars(); #10
-    	right_sig <= 32'd42; check_r <= 1'b1; #20
+    	right_sig <= 32'd11000100000000000000000000000000; check_r <= 1'b1; #20
     	check_r <= 1'b0;  #200
-    	left_sig <=  32'd73; self_sig <= 32'd89;  check_l <= 1'b1; check_s <= 1'b1; #20
+    	left_sig <=  32'd73; self_sig <= 32'd11000100000000000000000000000000;  check_l <= 1'b1; check_s <= 1'b1; #20
     	check_l <= 1'b0; check_s <= 1'b0; #200
-    	right_sig <= 32'b1; check_r <= 1'b1; #20
+    	right_sig <= 32'b00000100000000000000000000000000; check_r <= 1'b1; #20
     	check_r <= 1'b0; #50
-    	right_sig <= 32'd2; check_r <= 1'b1; #20
-    	check_r <= 1'b0; #200
-    	check_l <= 1'b1; #20
+    	self_sig <= 32'b10000000000000000000000000000000; check_s <= 1'b1; #20
+    	check_s <= 1'b0; #200
+    	self_sig <= 32'b01000000000000000000000000000000; check_l <= 1'b1; #20
     	check_l <=1'b0; #50
-    	right_sig <= 32'd500; left_sig <= 32'd800; self_sig <= 32'd4; check_l <= 1'b1; check_r <= 1'b1; check_s <= 1'b1; #20
-    	check_l <= 1'b0; check_r <= 1'b0; check_s <= 1'b0; #500
-
+    	left_sig <= 32'b10000000000000000000000000000000; check_l <= 1'b1; 
     	$finish;
     end
 
