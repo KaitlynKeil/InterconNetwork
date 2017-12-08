@@ -69,7 +69,7 @@ module nodeTest();
     	check_s <= 1'b0; #200
     	self_sig <= 32'b01000000000000000000000000000000; check_l <= 1'b1; #20
     	check_l <=1'b0; #50
-    	left_sig <= 32'b10000000000000000000000000000000; check_l <= 1'b1; 
+    	left_sig <= 32'b10000000000000000000000000000000; check_l <= 1'b1; #200
     	$finish;
     end
 

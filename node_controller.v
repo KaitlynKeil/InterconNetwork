@@ -1,4 +1,4 @@
-module node_controller (clk,source_port,controller_enable,instruction_in,instruction_out,enable,controller_enable_out);
+module node_controller (clk, controller_enable_out,source_port,controller_enable,instruction_in,instruction_out,enable,controller_enable_out);
 	input clk;
 	input [1:0] source_port;
 	input controller_enable;
@@ -26,27 +26,27 @@ module node_controller (clk,source_port,controller_enable,instruction_in,instruc
 		if(controller_enable) begin
 			if(source_port == 2'b01 && originating_node>destination_node) begin
 				if((originating_node-destination_node)>MIDPOINT_NODE) begin
-					enable = 2'b10;
+					enable <= 2'b10;
 				end else begin
-					enable = 2'b00;
+					enable <= 2'b00;
 				end
 			end else if(source_port == 2'b10) begin
 				if (destination_node == originating_node) begin
-					enable = 2'b01;
+					enable <= 2'b01;
 				end else if((destination_node-originating_node)>MIDPOINT_NODE) begin
-					enable = 2'b10;
+					enable <= 2'b10;
 				end else begin
-					enable = 2'b00;
+					enable <= 2'b00;
 				end
 			end else if(source_port == 2'b10 || source_port == 2'b00) begin
 				if (destination_node == NODE_IP) begin
-					enable = 2'b01;
+					enable <= 2'b01;
 				end else begin
-					enable = source_port;
+					enable <= source_port;
 				end
 			end
 		end
-		instruction_out = instruction_in;
-		controller_enable_out = controller_enable;
+		instruction_out <= instruction_in;
+		controller_enable_out <= controller_enable;
 	end
 endmodule
