@@ -43,8 +43,8 @@ module node_controller (clk, controller_enable_out,source_port,controller_enable
 			end else if(source_port == 2'b10) begin
 				if (destination_node == NODE_IP) begin
 					enable <= 2'b01;
-				end else if((destination_node-NODE_IP)>MIDPOINT_NODE) begin
-					enable <= 2'b10;
+				// end else if((destination_node-NODE_IP)>MIDPOINT_NODE) begin
+				// 	enable <= 2'b10;
 				end else begin
 					enable <= 2'b00;
 				end

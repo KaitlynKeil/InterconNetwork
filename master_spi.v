@@ -39,15 +39,15 @@ module master_spi
 				check_self <= 1'b1;
 
 			end else if (enable == 2'b00) begin
-				// Sends it right
+				// Sends it left
 				left_assert <= 1'b1;
 				self_assert <= 1'b0;
 				right_assert <= 1'b0;
 				self_instr <= 32'bZ;
-				right_instr <= in_instr;
-				left_instr <= 32'bZ;
-				check_left <= 1'b0;
-				check_right <= 1'b1;
+				left_instr <= in_instr;
+				right_instr <= 32'bZ;
+				check_left <= 1'b1;
+				check_right <= 1'b0;
 				check_self <= 1'b0;
 			end else if (enable == 2'b10) begin
 				// Sends it left
@@ -55,10 +55,10 @@ module master_spi
 				self_assert <= 1'b0;
 				left_assert <= 1'b0;
 				self_instr <= 32'bZ;
-				right_instr <= 32'bZ;
-				left_instr <= in_instr;
-				check_left <= 1'b1;
-				check_right <= 1'b0;
+				left_instr <= 32'bZ;
+				right_instr <= in_instr;
+				check_left <= 1'b0;
+				check_right <= 1'b1;
 				check_self <= 1'b0;
 			end
 		end

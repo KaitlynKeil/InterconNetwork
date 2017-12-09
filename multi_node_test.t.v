@@ -60,8 +60,14 @@ module multi_node_test ();
     	$dumpfile("multi_node_test.vcd");
 	    $dumpvars(); #10
 
-	    fourInData = 32'b00010000100100100100100100100100; fourInCS = 1'b1; #20
+	    fourInData = 32'b00010000100100100100100100100100; fourInCS = 1'b1; #20 // Message from four to zero
 	    fourInCS = 1'b0;
+
+	    threeInData = 32'b00110000100100100100100100100100; threeInCS = 1'b1; #20 // Message from three to one
+	    threeInCS = 1'b0;
+
+	    threeInData = 32'b00010000100100100100100100100100; threeInCS = 1'b1; twoInData = 32'b10010000100100100100100100100100; twoInCS = 1'b1; #20 // Message from three to zero, message from two to 4
+	    threeInCS = 1'b0; twoInCS = 1'b0;
 
 	    #1000
 	    $finish;
