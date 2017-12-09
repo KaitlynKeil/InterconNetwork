@@ -24,16 +24,26 @@ module node_controller (clk, controller_enable_out,source_port,controller_enable
 	
 	always @ (posedge clk) begin
 		if(controller_enable) begin
-			if(source_port == 2'b01 && originating_node>destination_node) begin
-				if((originating_node-destination_node)>MIDPOINT_NODE) begin
-					enable <= 2'b10;
+			if(source_port == 2'b01) begin
+				if (destination_node == NODE_IP) begin
+					enable <= 2'b01;
+				end else if (NODE_IP > destination_node) begin
+					if ((NODE_IP - destination_node) > MIDPOINT_NODE) begin
+						enable <= 2'b10;
+					end else begin
+						enable <= 2'b00;
+					end
 				end else begin
-					enable <= 2'b00;
+					if ((destination_node - NODE_IP) > MIDPOINT_NODE) begin
+						enable <= 2'b00;
+					end else begin
+						enable <= 2'b10;
+					end
 				end
 			end else if(source_port == 2'b10) begin
-				if (destination_node == originating_node) begin
+				if (destination_node == NODE_IP) begin
 					enable <= 2'b01;
-				end else if((destination_node-originating_node)>MIDPOINT_NODE) begin
+				end else if((destination_node-NODE_IP)>MIDPOINT_NODE) begin
 					enable <= 2'b10;
 				end else begin
 					enable <= 2'b00;

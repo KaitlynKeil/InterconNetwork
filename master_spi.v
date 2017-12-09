@@ -19,7 +19,7 @@ module master_spi
 	input [1:0] enable,                                          // 2 bit signal that lets it know which way it is sending information. 01: send to self; 00: send right; 10: send left
 	input [width-1:0] in_instr,                                  // instruction to be sent some direction
 	output reg check_self, check_left, check_right,              // single-bit flags to let the other nodes know they have a new value to consider
-	output reg [width-1:0] self_instr, left_instr, right_instr,  // the 3 directions instructions can go
+	output reg [width-1:0] self_instr, left_instr, right_instr  // the 3 directions instructions can go
 );
 
 	reg self_assert, left_assert, right_assert; // Currently not used; would act as enables for different CPUs/senders

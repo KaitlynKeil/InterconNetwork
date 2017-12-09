@@ -1,3 +1,4 @@
+`include "inputconditioner.v"
 `include "master_spi.v"
 `include "receiver_queue.v"
 `include "node_controller.v"
@@ -22,7 +23,7 @@ module oneDimensionalNode(shiftInLeftData,shiftInLeftCS,shiftInRightData,shiftIn
 	
 	node_controller #(.NODE_IP (NODE_IP),.MIDPOINT_NODE(MIDPOINT_NODE),.NODE_IP_BITWIDTH(NODE_IP_BITWIDTH)) nodeController(.clk (shiftInCLK),.source_port (dataSource),.controller_enable (controllerEn),.instruction_in (instruction),.instruction_out (instructionTo),.enable (outputSelect),.controller_enable_out(controller_enable_out));
 
-	master_spi masterSPI(.clk (shiftInCLK), .new_instr(controller_enable_out), .enable (outputSelect),.in_instr(instructionTo),.check_self(shiftOutCS),.check_left(shiftOutLeftCS),.check_right(shiftOutRightCS),.self_instr(shiftOutData), .left_instr(shiftOutLeftData), .right_instr(shiftOutRightData), .clk_out(shiftOutCLK));
+	master_spi masterSPI(.clk (shiftInCLK), .new_instr(controller_enable_out), .enable (outputSelect),.in_instr(instructionTo),.check_self(shiftOutCS),.check_left(shiftOutLeftCS),.check_right(shiftOutRightCS),.self_instr(shiftOutData), .left_instr(shiftOutLeftData), .right_instr(shiftOutRightData));
 	
 endmodule
 	
