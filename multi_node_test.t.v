@@ -69,7 +69,43 @@ module multi_node_test ();
 	    threeInData = 32'b00010000100100100100100100100100; threeInCS = 1'b1; twoInData = 32'b10010000100100100100100100100100; twoInCS = 1'b1; #20 // Message from three to zero, message from two to 4
 	    threeInCS = 1'b0; twoInCS = 1'b0;
 
-	    #1000
+	    oneInData = 32'b10010000100100100100100100100100; oneInCS = 1'b1; #20 // Message from one to four
+	    oneInCS = 1'b0;
+
+	    zeroInData = 32'b10001010011101100001100101011000; zeroInCS = 1'b1; #20
+		zeroInCS = 1'b0;
+		zeroInData = 32'b10001000100111101001100011000001; zeroInCS = 1'b1; #20
+		zeroInCS = 1'b0;
+		threeInData = 32'b00010001001010100001101001010000; threeInCS = 1'b1; #20
+		threeInCS = 1'b0;
+		twoInData = 32'b01100111000110110111000111001111; twoInCS = 1'b1; #20
+		twoInCS = 1'b0;
+		oneInData = 32'b10011101001011011100100101001100; oneInCS = 1'b1; #20
+		oneInCS = 1'b0;
+		oneInData = 32'b01000110111100010100011101010111; oneInCS = 1'b1; #20
+		oneInCS = 1'b0;
+		threeInData = 32'b10010111000011111011101010000100; threeInCS = 1'b1; #20
+		threeInCS = 1'b0;
+		fourInData = 32'b00000001000010001010001100000000; fourInCS = 1'b1; #20
+		fourInCS = 1'b0;
+		threeInData = 32'b00011011000010010110011101101010; threeInCS = 1'b1; #20
+		threeInCS = 1'b0;
+		oneInData = 32'b00000111110011110000011111001000; oneInCS = 1'b1; #20
+		oneInCS = 1'b0;
+		threeInData = 32'b00010111101110010111000111110000; threeInCS = 1'b1; #20
+		threeInCS = 1'b0;
+		oneInData = 32'b01011011111010001100010001101111; oneInCS = 1'b1; #20
+		oneInCS = 1'b0;
+		oneInData = 32'b01010011000101111001110001010000; oneInCS = 1'b1; #20
+		oneInCS = 1'b0;
+		threeInData = 32'b10001111111010001111101000011111; threeInCS = 1'b1; #20
+		threeInCS = 1'b0;
+		oneInData = 32'b10010111000100100010010001110111; oneInCS = 1'b1; #20
+		oneInCS = 1'b0;
+		zeroInData = 32'b00110001100111001110000111100010; zeroInCS = 1'b1; #20
+		zeroInCS = 1'b0;
+
+	    #500
 	    $finish;
     end
 
