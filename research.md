@@ -24,7 +24,7 @@ According to this definition, our MVP creation was a 5-ary 1-cube torus network.
 
 These networks are optimal because their physical arrangement of nodes allows for the use of short wires for node connections. They are also bidirectional in the way they send data, and so for their communication patterns, throughput is higher but latency is lower “than for random traffic.”
 
-#### IBM Blue Gene/Q
+#### IBM Blue Gene/Q's 5D Torus Network
 
 Using [this research paper](http://www.idav.ucdavis.edu/~ki/publications/vpa2014.pdf) that analyzed the five-dimensional torus network utilized in IBM’s Blue Gene/Q project - which is aimed at designing supercomputers that can meet high-performance processing needs, we were able to learn more specifically about one application of a torus network.
 
@@ -34,7 +34,7 @@ From this visualization, the authors were about to figure out that a significant
 
 This final assertion about the results of the use of torus networks from the paper was particularly interesting since it seemed to match the textbook’s analysis of the benefits of a torus network. The torus network is desirable because of it’s simple (intuitive) topology and also because shorter wires can be used to connect nodes. However, even looking at visual representations of torus networks, it seems that the most optimal ones are the ones in which all the channels are relatively even. This makes sense, as if one formatted a torus network to have a really long channel, it would decrease communication time for the nodes that channel is connected to - even if that configuration may increase communication time/decrease wire length elsewhere.
 
-#### Routing Algorithms for Torus Networks
+#### Mesh and Torus Routing Algorithms
 
 Using [this research paper](http://spirit.cs.ucdavis.edu/pubs/conf/hipc-torus.pdf), we were able to learn about a routing algorithm for mesh networks can also be applied to torus networks “with minimal extra hardware.”
 
@@ -48,7 +48,7 @@ Both torus networks and mesh networks can be blocked (through a concept called w
 
 This can be done, according to the paper, by applying constraints onto the messages and where they could travel. These constraints, allegedly, could be solved with minimal additional hardware onto the torus network. This is important - routing in mesh networks has a lot of research pertaining to it, and with this paper, it seems like these routing algorithms could easily be applied to torus networks as well.
 
-#### Matrix Multiplication on Multidimensional Torus Networks
+#### Matrix Multiplication Algorithms as Routing Algorithms
 
 One research paper that we read that was particularly interesting was [this one](https://pdfs.semanticscholar.org/5d76/0f767a2372bc915e676b0a692fb8c7d6aa2f.pdf). Mainly because it was outside the realm of what we expected to find when researching torus networks, unlike with the previous two research papers.
 
@@ -60,7 +60,7 @@ Another algorithm, SUMMA, can use all of the connections in a torus network and 
 
 In the paper, the authors used IBM’s supercomputer Blue Gene/P, and found that, relative to each other, SD Cannon is better than just Cannon, but does not meet the performance of SUMMA - and thus is not advantageous to use SD Cannon over SUMMA on Blue Gene/P hardware, but has advantages that theoretically make it a better implementation in other cases.
 
-### Reducing the Spectral Radius of a Torus Network by Link Removal
+#### Solving the ORL Problem
 
 Found a trend yet? We just love our research papers! (Actually, it was more of the fact that the research papers allowed us to learn more ideas beyond just what the textbook could offer us - because we had already read that up until the point we felt it was useful.)
 This research paper was especially interesting since it dealt with removing links (that connect nodes together) to reduce the spectral radius.
