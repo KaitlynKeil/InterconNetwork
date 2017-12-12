@@ -63,7 +63,7 @@ In the paper, the authors used IBM’s supercomputer Blue Gene/P, and found that
 #### Solving the ORL Problem
 
 Found a trend yet? We just love our research papers! (Actually, it was more of the fact that the research papers allowed us to learn more ideas beyond just what the textbook could offer us - because we had already read that up until the point we felt it was useful.)
-This research paper was especially interesting since it dealt with removing links (that connect nodes together) to reduce the spectral radius.
+This [research paper](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0155580) was especially interesting since it dealt with removing links (that connect nodes together) to reduce the spectral radius.
 
 Our first question was - why even bother with this? It seems like reducing links would cause a loss in performance, and losing performance is a huge trade-off, and to reduce size there might be other topologies or methods serve this purpose.
 
