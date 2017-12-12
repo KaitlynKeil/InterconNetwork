@@ -8,6 +8,8 @@ Networks are commonplace with the rise of the Internet of Things. If your coffee
 
 For our final project in Computer Architecture, we decided to research and understand more about interconnection networks. The performance of these interconnection networks often serve as an inhibitor in many computer architecture systems, so we decided to a) research interconnection networks and b) implement a very simply interconnection network in Verilog in hopes of understanding the system better.
 
+[Process](https://kaitlynkeil.github.io/InterconNetwork/process) [Results](https://kaitlynkeil.github.io/InterconNetwork/results) [Reflection](https://kaitlynkeil.github.io/InterconNetwork/reflection) [Research](https://kaitlynkeil.github.io/InterconNetwork/research)
+
 ## Motivation
 All three of us took the chance that was given to us for this final, and decided to research something that we all were curious about. For some of us, it boiled down to the fact that we didn’t know anything about interconnection networks - and as a result, decided to use this final project to mitigate that. Additionally, it seemed like an interesting enough topic when first introduced briefly as an idea for a final project, mostly because it seemed like an integral part of computer architecture systems that we haven’t even touched.
 After doing additional research on it, it turned out that some of us had actually had a basis in the material, in that we had done research with Siddhartan on his Hybrid-Visible Light RF Communication System - which involved some knowledge of the Open Systems Interconnection model (OSI model) that characterizes the communication functions of a computing system without revealing too much about the structure that actually achieves that purpose.
