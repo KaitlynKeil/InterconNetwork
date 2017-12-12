@@ -20,3 +20,15 @@ As for choosing our final deliverables, we were driven by our desire to continue
 ## Resources
 
 We used a number of resources, which can be found at the below with brief descriptions.
+
+*Principles and Practices of Interconnection Networks* by William James Dally and Brian Towles: This was the main resource utilized by all of the members of the team in order to gain a rudimentary understanding on interconnection networks, specifically torus networks.
+
+The following are research papers that members of our team read to gain a more comprehensive view of torus networks. Specific analysis and descriptions can be found in the results section (as well as specific links).
+
+*Visualizing the Five-dimensional Torus Network of the IBM Blue Gene/Q* by McCarthy, Isaacs, Bhatele, Bremer, Hamann
+
+*Routing Algorithms for Torus Networks* by Upadhyay, Vara Varavithya, and Mohapatra
+
+*Matrix multiplication on multidimensional torus networks* by Solomonik and Demmel
+
+*Reducing the Spectral Radius of a Torus Network by Link Removal* by Yang, Li, and Yang
