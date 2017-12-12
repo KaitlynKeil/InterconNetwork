@@ -57,3 +57,19 @@ Torus networks are preferable because “they achieve good bisection bandwidth w
 
 Split-dimensional Cannon’s algorithm, or SD Cannon’s algorithm, utilizes more dimensional shifts by sending a single message over a single link from one processor to the next processor. Communication cost is thus proportional to the number of shifts that occur.
 Another algorithm, SUMMA, can use all of the connections in a torus network and send a minimal amount of words by pipelining the messages and traversing the network by ‘flattening’ it into a the row and column of each mapping - essentially, a rectangular formulation of a multidimensional torus network.
+
+In the paper, the authors used IBM’s supercomputer Blue Gene/P, and found that, relative to each other, SD Cannon is better than just Cannon, but does not meet the performance of SUMMA - and thus is not advantageous to use SD Cannon over SUMMA on Blue Gene/P hardware, but has advantages that theoretically make it a better implementation in other cases.
+
+### Reducing the Spectral Radius of a Torus Network by Link Removal
+
+Found a trend yet? We just love our research papers! (Actually, it was more of the fact that the research papers allowed us to learn more ideas beyond just what the textbook could offer us - because we had already read that up until the point we felt it was useful.)
+This research paper was especially interesting since it dealt with removing links (that connect nodes together) to reduce the spectral radius.
+
+Our first question was - why even bother with this? It seems like reducing links would cause a loss in performance, and losing performance is a huge trade-off, and to reduce size there might be other topologies or methods serve this purpose.
+
+The paper seems not to offer a concrete hardware or application specific for this, but it does mention that it is one of the ‘NP-hard’ problems in the field of interconnection networks. It is called the optimal link removal problem, or the OLR problem. The paper explains the problem as follows: “The optimal link removal (OLR) problem aims at removing a given number of links of a network so that the spectral radius of the residue network obtained by removing the links from the network attains the minimum.” The paper then goes on to explain the problems of applying this to torus networks. 
+
+The three subproblems the paper addresses are removing two links, removing three links, and then removing four links. The paper does some math (oversimplification much?) in order to figure out which links to remove in order to reach the minimal spectral radius. The ending assertion of this paper was that similar work should be done for other networks.
+
+As students who have only really studied interconnection networks for a total less than a month, we mean no disrespect when we say we don’t understand why similar work should be done. Other than reducing cost, what does this link removal benefit? There seems to be no discussion of performance and how this actually affect performance - which makes us think that this paper is only a glimpse into a separate field of interconnection networks we don’t understand. Alternatively, this paper could be theoretical and not meant for actual practical usage. However, the bottom line is that although this paper was very interesting, we are still left confused (due to no fault on the authors).
+
