@@ -1,4 +1,4 @@
-#Research
+# Research
 
 As one of our primary goals was learning about interconnection networks, we had an explicit focus in researching such networks. We primarily turned to extensions on our prior knowledge and textbooks on the topic to aid us in our research, with an explicit focus on torus networks (as was our plan to implement).
 
