@@ -33,6 +33,15 @@ Our ring network, tested with results shown above, can take an instruction at an
 
 ![Instruction Bit Breakdown](https://github.com/KaitlynKeil/InterconNetwork/blob/master/instr_pieces.jpg)
 
+Our code is located on our Github. In order to see our Torus Network output (through a test bench), download the repository and its corresponding code files, and type the following commands into terminal to see the Waveform output of our torus network. (Needs to be in a directory which the repo folder is located, needs Verilog, and needs Gtkwave).
+
+```
+cd InterconnectNetwork
+iverilog -o five_node multi_node_test.t.v
+./five_node
+gtkwave multi_node_test.vcd
+```
+
 # Extensions
 
 There are many ways to move forward from this point of our project. Primarily, we have many ideas on how to move forward with the actual implementation - of course more research/understanding could be done, but we felt that this was an obvious extension.
