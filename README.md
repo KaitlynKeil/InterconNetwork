@@ -6,7 +6,9 @@
 
 Networks are commonplace with the rise of the Internet of Things. If your coffeemaker isn’t communicating with your alarm clock to make sure you have a steaming cup before you’ve brushed your teeth, you’re clearly behind the times. And these networks exist on many different levels: from the internet to wireless connections in your home to network switches to multiple processors on a single chip. This last one isn’t as grandiose as being able to argue with someone on the other side of the world, but these interconnection networks are what makes the devices we use to do so run.
 
-For our final project in Computer Architecture, we decided to research and understand more about interconnection networks. The performance of these interconnection networks often serve as an inhibitor in many computer architecture systems, so we decided to a) research interconnection networks and b) implement a very simply interconnection network in Verilog in hopes of understanding the system better.
+For our final project in Computer Architecture, we decided to research and understand more about interconnection networks. The performance of these interconnection networks often serve as an inhibitor in many computer architecture systems, so we decided to a) research interconnection networks and b) implement a very simply interconnection network in Verilog (shown below) in hopes of understanding the system better.
+
+![1D Torus Example](https://github.com/KaitlynKeil/InterconNetwork/blob/master/network_diagram.jpg)
 
 [Process](https://kaitlynkeil.github.io/InterconNetwork/process) [Results](https://kaitlynkeil.github.io/InterconNetwork/results) [Reflection](https://kaitlynkeil.github.io/InterconNetwork/reflection) [Research](https://kaitlynkeil.github.io/InterconNetwork/research)
 
